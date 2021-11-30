@@ -138,10 +138,12 @@ public class ChildrenLibraryHall implements IHall, Cloneable{
     }
 
     @Override
-    public Object clone() {
-        Object result = null;
+    public ChildrenLibraryHall clone() {
+        ChildrenLibraryHall result = null;
         try {
-            result = super.clone();
+            result = (ChildrenLibraryHall) super.clone();
+            List list = (List) this.getBooks().clone();
+            result.setBooks(list);
         } catch (CloneNotSupportedException ex) { }
         return result;
     }

@@ -136,10 +136,12 @@ public class ScientificLibraryHall implements IHall, Cloneable{
     }
 
     @Override
-    public Object clone() {
-        Object result = null;
+    public ScientificLibraryHall clone() {
+        ScientificLibraryHall result = null;
         try {
-            result = super.clone();
+            result = (ScientificLibraryHall) super.clone();
+            List list = (List) this.getBooks().clone();
+            result.setBooks(list);
         } catch (CloneNotSupportedException ex) { }
         return result;
     }

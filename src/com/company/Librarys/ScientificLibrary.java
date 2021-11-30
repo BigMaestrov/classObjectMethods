@@ -5,6 +5,7 @@ import com.company.Books.ScientificBook;
 import com.company.Exceptions.BookIndexOutOfBoundsException;
 import com.company.Exceptions.HallIndexOutOfBoundsException;
 import com.company.Halls.IHall;
+import com.company.Halls.ScientificLibraryHall;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -245,11 +246,16 @@ public class ScientificLibrary implements ILibrary, Cloneable {
     }
 
     @Override
-    public Object clone() {
-        Object result = null;
+    public ScientificLibrary clone() {
+        ScientificLibrary result = null;
         try {
-            result = super.clone();
-        } catch (CloneNotSupportedException ex) { }
+            result = (ScientificLibrary) super.clone();
+            BidirectionalList bidirectionalList = (BidirectionalList) this.getLibraryHalls();
+            result.setLibraryHalls(bidirectionalList);
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+
         return result;
     }
 

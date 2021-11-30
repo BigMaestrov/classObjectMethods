@@ -87,6 +87,7 @@ public class Main {
         ScientificLibraryHall newHall1;
         newHall1 = (ScientificLibraryHall) hall_1.clone();
         System.out.println("--------Проверка клонирования--------");
+        hall_1.deleteBook(1);
         hall_1.printBooks();
         System.out.println();
         newHall1.printBooks();
@@ -96,6 +97,7 @@ public class Main {
         ScientificLibrary newLibrary;
         newLibrary = (ScientificLibrary) ((ScientificLibrary) library).clone();
         System.out.println("--------Проверка клонирования--------");
+        library.changeBookByID(0, new ScientificBook());
         newLibrary.printBooks();
         System.out.println();
         library.printBooks();
