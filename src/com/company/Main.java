@@ -74,8 +74,6 @@ public class Main {
         System.out.println("5)Print list of the names books descending price: ");
         library.printBooks(library.selectionSortBookInHallByCost());
 
-        library.printBooks();
-        ScientificLibrary clone = (ScientificLibrary) library.clone();
-        clone.printBooks();
+
     }
 }
