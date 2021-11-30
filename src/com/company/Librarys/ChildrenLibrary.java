@@ -244,7 +244,11 @@ public class ChildrenLibrary implements ILibrary, Cloneable{
     }
 
     @Override
-    protected ChildrenLibrary clone() throws CloneNotSupportedException {
-        return (ChildrenLibrary) super.clone();
+    public Object clone() {
+        Object result = null;
+        try {
+            result = super.clone();
+        } catch (CloneNotSupportedException ex) { }
+        return result;
     }
 }

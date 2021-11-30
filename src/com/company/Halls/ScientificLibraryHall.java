@@ -136,7 +136,12 @@ public class ScientificLibraryHall implements IHall, Cloneable{
     }
 
     @Override
-    protected ScientificLibraryHall clone() throws CloneNotSupportedException {
-        return (ScientificLibraryHall) super.clone();
+    public Object clone() {
+        Object result = null;
+        try {
+            result = super.clone();
+        } catch (CloneNotSupportedException ex) { }
+        return result;
     }
+
 }

@@ -5,7 +5,7 @@ import com.company.Books.IBook;
 
 import java.io.Serializable;
 
-public class List implements Serializable {
+public class List implements Serializable, Cloneable {
     class Item implements Serializable{
         private IBook data;
         private Item next;
@@ -141,5 +141,10 @@ public class List implements Serializable {
 
     void showBookInfo(Item temp) {
         System.out.println(temp.data.toString());
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

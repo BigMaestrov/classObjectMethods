@@ -103,8 +103,12 @@ public class Book implements IBook, Cloneable {
     }
 
     @Override
-    protected Book clone() throws CloneNotSupportedException {
-        return (Book) super.clone();
+    public Object clone() {
+        Object result = null;
+        try {
+            result = super.clone();
+        } catch (CloneNotSupportedException ex) { }
+        return result;
     }
 
 }

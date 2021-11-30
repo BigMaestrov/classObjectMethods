@@ -75,5 +75,30 @@ public class Main {
         library.printBooks(library.selectionSortBookInHallByCost());
 
 
+        //Клонирование книги
+        ScientificBook newBook2;
+        newBook2 = (ScientificBook) scientificBook1.clone();
+        System.out.println("--------Проверка клонирования--------");
+        scientificBook1.printBook();
+        newBook2.printBook();
+        System.out.println(scientificBook1.equals(newBook2));
+
+        //Клонирование зала
+        ScientificLibraryHall newHall1;
+        newHall1 = (ScientificLibraryHall) hall_1.clone();
+        System.out.println("--------Проверка клонирования--------");
+        hall_1.printBooks();
+        System.out.println();
+        newHall1.printBooks();
+        System.out.println("\n"+hall_1.equals(newHall1));
+
+        //Клонирование библиотеки
+        ScientificLibrary newLibrary;
+        newLibrary = (ScientificLibrary) ((ScientificLibrary) library).clone();
+        System.out.println("--------Проверка клонирования--------");
+        newLibrary.printBooks();
+        System.out.println();
+        library.printBooks();
+        System.out.println("\n"+library.equals(newLibrary));
     }
 }

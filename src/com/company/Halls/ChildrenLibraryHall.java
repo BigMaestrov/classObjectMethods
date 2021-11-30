@@ -138,7 +138,11 @@ public class ChildrenLibraryHall implements IHall, Cloneable{
     }
 
     @Override
-    protected ChildrenLibraryHall clone() throws CloneNotSupportedException {
-        return (ChildrenLibraryHall) super.clone();
+    public Object clone() {
+        Object result = null;
+        try {
+            result = super.clone();
+        } catch (CloneNotSupportedException ex) { }
+        return result;
     }
 }

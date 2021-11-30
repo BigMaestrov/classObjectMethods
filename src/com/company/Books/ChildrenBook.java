@@ -63,7 +63,9 @@ public class ChildrenBook extends Book implements Cloneable {
     }
 
     @Override
-    protected Book clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() {
+        Object result = null;
+        result = super.clone();
+        return result;
     }
 }

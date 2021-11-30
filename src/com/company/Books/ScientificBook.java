@@ -66,7 +66,9 @@ public class ScientificBook extends Book implements Cloneable{
     }
 
     @Override
-    public ScientificBook clone() {
-        return new ScientificBook(getAuthor(),getName(),getCost(),getYear(),getCitationIndex());
+    public Object clone() {
+        Object result = null;
+        result = super.clone();
+        return result;
     }
 }

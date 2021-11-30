@@ -245,10 +245,13 @@ public class ScientificLibrary implements ILibrary, Cloneable {
     }
 
     @Override
-    protected ScientificLibrary clone() throws CloneNotSupportedException {
-        return (ScientificLibrary) super.clone();
+    public Object clone() {
+        Object result = null;
+        try {
+            result = super.clone();
+        } catch (CloneNotSupportedException ex) { }
+        return result;
     }
-
 
 }
 
